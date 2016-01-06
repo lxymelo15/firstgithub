@@ -1,0 +1,465 @@
+<meta name="viewport" content="minimal-ui=yes,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta content="content" charset="utf-8">
+<script type="text/javascript" src="http://image.benlailife.com/SpecialJs/benlai_effects.js"></script>
+<link rel="stylesheet" type="text/css" href="http://image.benlailife.com/wap/style/basic.css">
+<!-- 创建后台代码时，请自行删除以上代码 -->
+  <link href="http://image5.benlailife.com/waprs/style/basic.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" type="text/css" href="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/chrisgift.css">
+ <style>
+ 	*{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+ 	.gift a,.gift02 a{ display: block; position: absolute;}
+  	.hide{display: none;}
+  	.bagNum{position:absolute;top:52%;left:0;z-index:99;width:100%;text-align:center;color:#FFF;}
+  	.peoplenum span{font-size: 0.12rem;}
+  	.alert .alert_close{position: absolute;top: 0%;right: 1.5%;cursor: pointer;width: 8%;background: none;font:500 .23rem/.2rem '微软雅黑';}
+  	.music{ position:fixed; top:10px;right:10px;width:10% !important;z-index: 101;}
+  	#wap_top,#openAppArea,#chooseCityArea{display: none !important;}
+  	.alert .alert_content{margin: -50% auto;top:50%;}
+  	.noLine{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+ </style>
+ <script>
+             document.title = "圣“袋”快乐！本来生活送福袋啦！！！";
+ </script>
+ <div style="height:0">
+ 	<img src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/sharepic.jpg"/>
+ </div>
+ <div class="app_content" style="height:0;padding-bottom:148.8%;background-color:#FA9A9C;">
+ 	<img class="music" src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/stop.png" />
+ 	<!--1.开始页面start-->
+ 	<div id="startPage" class="hide">
+ 		<!-- 按钮 -->
+ 			<div class="chris_btn01">
+ 				<!-- 立即领取 -->
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/get.png" data-arc="ljGet">
+ 			</div>
+ 			<div class="check_btn02" style="top:69%;"><!--check_btn02-->
+ 				<!-- 立即查看我的福袋 -->
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/check.png" data-arc="btnLookFD" style="display:none;"/>
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/again.png" data-arc="btnAgain" style="display:none;"/>
+ 			</div>
+ 			<!-- 圣诞树背景 -->
+ 			<div class="treebg02">
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/treebg.png">
+ 			</div>
+
+ 			<!-- 圣袋快乐 -->
+ 			<div class="topic">
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/topic.png">
+ 			</div>
+ 			
+ 			<!-- 鹿2 -->
+ 			<div class="deer02">
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/deer2.png">
+ 			</div>
+ 			
+ 			<!-- 本来logo -->
+ 			<div class="benlailogotop">
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/logo.png">
+ 			</div>
+ 			<!-- 已有多少人领取福袋 -->
+ 			<div class="peoplenum">
+ 				<span>已经有12000人参与领取福袋</span>
+ 			</div>
+
+ 			<!-- 白线 -->
+ 			<div class="line"></div>
+
+ 			<!-- 得奖名单 活动规则 -->
+ 			<div class="rule">
+ 				<!-- 得奖名单 -->
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/mingdan.png">
+ 				<!-- 活动规则 -->
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/rulelink.png" >
+ 			</div>
+ 	</div>
+ 	<!--开始页面end-->
+ 	<!--2.tab页面 start-->
+ 	<div id="tabPage" class="hide">
+ 		<div class="alert">
+ 			<div class="alert_content" style="background-color:#f19797;z-index:1;">
+ 				
+ 					<div class="twobtn">
+ 						<span>						 
+ 							<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/mingdan2.png" />
+ 						</span>
+ 						<span>
+ 							<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/rulelink2.png"/>
+ 						</span>
+ 					</div>
+ 					<!-- 切换活动名单和活动规则时请更改.alert_content的background-color， conten1匹配background-color:#f19797,conten2匹配background-color:#ffe5c6,-->
+ 					<!-- 活动名单 -->
+ 					<div class="conten1">
+ 					</div>
+ 					<textarea id="prizeList" style="display:none;">
+ 						<table border="0">
+ 						  <tr>
+ 						    <th>电话</th>
+ 						    <th>奖品名称</th>
+ 						  </tr>
+ 						  <% $.each(this,function(k,v){%>
+ 						  <tr><td><%v.TeamMaster%></td><td><%v.CouponName%></td></tr>
+ 						  <%});%>
+ 						</table>
+ 					</textarea>
+ 					<!-- 活动规则 -->
+ 					<div class="content2" style="display: none">
+ 						<h5>奖品列表</h5>
+ 						<ul>
+ 							<li>福袋一：圣“袋”福袋大礼包（瑞士莲70%可可黑巧+珍妮花手工曲奇+鸡尾酒/白啤）</li>
+ 							<li>福袋二：平和琯溪蜜柚两粒9.9元包邮券（30元减20.1元）</li>
+ 							<li>福袋三：30元9粒红富士苹果券优惠券</li>
+ 							<li>福袋四：黄金车厘子180元优惠券</li>
+ 							<li>福袋五：全场10元优惠券（满80元可用）</li>
+ 						</ul>
+ 						<h5>活动规则</h5>
+ 						<div>
+ 							<p>·活动时间：2015年12月15日至2015年12月31日。（兑换券截止到12月31日）</p>
+ 							<p>·每人每天最多可领取福袋2个。</p>
+ 							<p>·每个福袋需要邀请3个朋友帮忙拆开，才能获得里面的礼物。</p>
+ 							<p>·得到福袋礼物的小伙伴，该福袋优惠券会派发到您输入的手机号绑定的本来生活网账号里（若没绑定手机号请绑定或重新以该手机号注册即可）</p>
+ 							<p>·进入本来生活app或官网benlai.com，进入“兑换专区”，把得到的福袋对应商品放到购物车，结算时选择使用优惠券即可抵扣该福袋优惠券奖品。</p>
+ 							<p>·客服电话：4008-000-917</p>
+
+ 						</div>						
+ 					</div>
+
+
+ 					<div>
+ 						<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/get.png" data-arc="ljGet"/>
+ 					</div>
+ 			</div>
+ 			<a id="tabClick" href="javascript:void(0);" style="position:absolute;top:0;left:0;z-index:0;width:100%;height:100%;"></a>
+ 		</div>
+ 	</div>
+ 	<!--tab页面 end-->
+ 	<!--3.切换页面,选产品start-->
+ 	<div id="switchPage" class="hide">
+ 	<!-- 信息框 -->
+ 		<div class="info_frame">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/info_frame.png"/>
+ 			
+ 			<div class="info_text">
+ 				<span class="info_middle">
+ 					<span class="info_name" style="display: none">xxx:</span>
+ 					<span class="info_content"><span>选你喜欢的福袋模式</span></span>
+ 				</span>
+ 				<i></i>
+ 			</div>
+ 		</div>
+ 		
+ 		<!-- 鹿 -->
+ 		<div class="deer">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/deer.png"/>
+ 		</div>
+ 		<!-- 按钮 -->
+ 		<div class="chris_btn">
+ 			<!-- 就选ta了按钮 -->
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/justit.png" data-arc="selFDStyle"/>
+ 		</div>
+ 		<!-- 礼物背景 -->
+ 		<div class="giftbg">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/sun.png"/>
+ 		</div>
+ 		<!-- 雪花 -->
+ 		<div class="snow">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snow.png"/>
+ 		</div>
+ 		<!-- 底部信息 -->
+ 		<div class="bottominfo" id="againTips">
+ 			<span>
+ 				今天还可以再领一个福袋
+ 			</span>
+ 		</div>
+ 		<!-- 礼物 -->
+ 		<div class="gift" style="transform: translate3d(0%, 0px, 0px);" id="gift">
+ 			<a href="javascript:void(0);" style="transform: translate3d(0%, 0px, 0px);"><img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift1.png"/></a>
+ 			<a href="javascript:void(0);"  style="transform: translate3d(100%, 0px, 0px);"><img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift2.png"/></a>
+ 			<a href="javascript:void(0);"  style="transform: translate3d(200%, 0px, 0px);"><img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift3.png"/></a>
+ 			<a href="javascript:void(0);"  style="transform: translate3d(300%, 0px, 0px);"><img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift4.png"/></a>
+ 			<a href="javascript:void(0);"  style="transform: translate3d(400%, 0px, 0px);"><img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift5.png"/></a>
+ 		</div>
+ 		<!-- 右方向 -->
+ 		<a href="javascript:void(0);" class="select_btn02 btn_r" id="rightSwitch">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/right.png"/>
+ 		</a>
+ 		<!-- 左方向 -->
+ 		<a  href="javascript:void(0);" class="select_btn02 btn_l" id="leftSwitch">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/left.png"/>
+ 		</a>
+ 		<!-- 切换礼物小白点 -->
+ 		<div class="writedot dottop02">
+ 			<ul id="giftUl">
+ 				<li class="on"></li>
+ 				<li></li>
+ 				<li></li>
+ 				<li></li>
+ 				<li></li>
+ 			</ul>
+ 		</div>
+ 		<!-- 本来logo -->
+ 		<div class="benlailogo logoright">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/logo.png">
+ 		</div>	
+ 		<div class="alert" style="display:none;">
+ 			<div class="alert_content">
+ 				<div class="alertgift">
+ 					<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift1.png"/>
+ 					<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift2.png" style="display:none;"/>
+ 					<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift3.png" style="display:none;"/>
+ 					<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift4.png" style="display:none;"/>
+ 					<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift5.png" style="display:none;"/>
+ 				</div>
+ 				<div class="alert_close">x</div>
+ 				<div class="alert_text">已获得的奖品会下发至您<strong>手机号绑定的账户</strong>中， 请输入您的<strong>手机号</strong>，谢谢！</div>
+ 				<!-- <div class="alert_text text_red">您还没有登录，请先登录，再参与活动！</div>-->
+ 				<div class="triangle-down">    <!--向下的三角--> </div>
+ 				<!-- 输入手机号码 -->
+ 			    <div class="mobilenum">
+ 			    	<img data-src="http://image2.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/MTicon.png"/>
+ 			    	<div class="nnum">
+ 			    		<input type="text" placeholder="请输入手机号码" id="phone"/>
+ 			    	</div>
+ 			    </div>
+ 			    <!-- 输入验证码 -->
+ 			    <div class="code">
+ 			    	<div class="codecenter">
+ 			    		<input type="text" placeholder="请输入验证码" id="code"/>
+ 			    		<!-- 获取验证码 -->
+ 			    		<a href="javascript:void(0);" id="getYZM" style="color:#fff;margin:0 1%;font-size:0.12rem; display:inline-block;">获取验证码</a>
+ 			    	</div>
+ 			    </div>
+ 			    <!-- 验证码提示信息 -->
+ 			    <div class="codetip"><!-- *请输入验证码 --></div>
+ 			    <!-- 立即领取按钮 -->
+ 			    <div class="ljlqbtn">
+ 			    	<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/get.png" data-arc="ljGetInter"/>
+ 			    </div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<!--切换界面end-->
+ 	<!--5.领取成功start-->
+ 	<div id="getSuccess" class="hide">
+ 		<!-- 信息框 -->
+ 		<div class="info_frame">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/info_frame.png"/>
+ 			
+ 			<div class="info_text">
+ 				<span class="info_middle">
+ 					<span class="info_content padtop">邀请<span>3个好友</span>帮您拆福袋吧</span>
+ 				</span>
+ 				<i></i>
+ 			</div>
+ 		</div>
+ 		
+ 		<!-- 鹿 -->
+ 		<div class="deer">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/deer.png"/>
+ 		</div>
+
+ 		<!-- 领取成功 -->
+ 		<div class="success">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/success.png"/>
+ 		</div>
+
+ 		<!-- 按钮 -->
+ 		<div class="chris_btn">
+ 			<!-- 立即查看我的福袋按钮 -->
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/check.png" data-arc="btnLookFD"/>
+ 			<!-- 邀请好友按钮 -->
+ 			<img id="invitationID" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/invitation.png" data-arc="ljTell" data-bagNum="" data-bagID=""/>
+ 		</div>
+
+ 		
+
+ 		<!-- 礼物背景 -->
+ 		<div class="giftbg">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/sun.png"/>
+ 		</div>
+ 		<!-- 雪花 -->
+ 		<div class="snow">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snow.png"/>
+ 		</div>
+
+ 		<!-- 底部信息 -->
+ 		<div class="bottominfo">
+ 			<span>
+ 				3个好友帮您拆福袋后
+ 			</span>
+ 			<span>
+ 				记得回来这里领取奖品哦
+ 			</span>
+ 		</div>
+ 		
+ 		<!-- 礼物 -->
+ 		<div class="gift">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift1.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift2.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift3.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift4.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift5.png"/>
+ 		</div>
+ 	</div>
+ 	<!--领取成功end-->
+ 	<!--6.查看福袋start-->
+ 	<div id="lookFD" class="hide">
+ 		<!-- 信息框 -->
+ 		<div class="info_frame02">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/info_frame.png"/>
+ 			
+ 			<div class="info_text">
+ 			 	<!--获得商品-->
+ 				<span class="info_middle" id="bagInfo">
+ 				</span>
+ 				<i></i>
+ 			</div>
+
+ 		</div>
+ 		<div id="prizeTips" style="width:100%;position:absolute;bottom:8%;color:#FFF;font-size:0.124rem;">福袋券已派发到您输入的手机号绑定的账号里</div>
+ 		<!-- 三个小雪人，A为白色雪人，B为粉色雪人背景 -->
+ 		<div class="snowman">
+ 			<img data-arc="A" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snowmanA.png"/>
+ 			<img data-arc="A" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snowmanA.png"/>
+ 			<img data-arc="A" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snowmanA.png" style="display:none;"/>
+ 			<img data-arc="B" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snowmanB.png"/>
+ 			<img data-arc="B" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snowmanB.png" style="display: none"/>
+ 			<img data-arc="B" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snowmanB.png" style="display: none"/>
+ 		</div>
+
+ 		<!-- 右方向 -->
+ 		<a href="javascript:void(0);" class="select_btn btn_r"  id="rightSwitch2">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/right.png"/>
+ 		</a>
+ 		<!-- 左方向 -->
+ 		<a href="javascript:void(0);" class="select_btn btn_l" id="leftSwitch2">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/left.png"/>
+ 		</a>
+
+ 		<!-- 打钩打叉状态栏 -->
+ 		<div class="trick">
+ 			<img data-arc="right" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/select.png"/>
+ 			<img data-arc="wrong" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/disselect.png" style="display: none"/>
+ 		</div>
+ 		
+ 		<!-- 按钮 -->
+ 		<div class="chris_btn">
+ 			<!-- 找人帮忙 -->
+ 			<img  id="lookHelp" data-arc="ljTell" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/help.png" data-bagNum="" data-bagID="">
+ 			<!--拆福袋-->
+ 			<img id="chaiBag" data-arc="chaiBag" data-bagID="" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/chai.png">
+ 			<!-- 再领一个按钮 -->
+ 			<img id="bagAgain" data-arc="btnAgain" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/again.png" class="tearopen"/>
+ 			
+ 		</div>
+ 		<!-- 圣诞树背景 -->
+ 		<div class="treebg">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/treebg.png"/>
+ 		</div>
+ 		<!-- 雪花 -->
+ 		<div class="snow">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snow.png"/>
+ 		</div>
+ 		<!-- 恭喜您 -->
+ 		<div class="congra" id="congra" style="display:none;">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/congratulation.png"/>
+ 		</div>
+ 		<!--好可惜-->
+ 		<div class="disa" id="disa" style="display:none;">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/disappoint.png">
+ 		</div>
+ 		<!-- 本来logo -->
+ 		<div class="benlailogo logoright">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/logo.png"/>
+ 		</div>
+ 		<div id="bagNum" class="bagNum">第1个福袋</div> 
+ 		<!-- 礼物 -->
+ 		<div class="gift02" style="transform: translate3d(0%, 0px, 0px);" id="gift02">
+ 		</div>
+ 		<textarea id="mybagsCon" style="display:none;">
+ 			<%$.each(this,function(k,v){%>
+ 				<%if(v.IsBind){%>
+ 					<a href="javascript:void(0);" style="transform: translate3d(<%k*100%>%, 0px, 0px);"><img src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift<%v.Num+1%>_open.png"/></a>
+ 				<%}else{%>
+ 					<a href="javascript:void(0);" style="transform: translate3d(<%k*100%>%, 0px, 0px);"><img src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift<%v.Num+1%>.png"/></a>
+ 				<%}%>
+ 			<%});%>
+ 		</textarea>
+ 		<!-- 弹窗 start -->
+ 		<div class="alert" id="prizeAlert" style="display:none;">
+ 			<div class="alert_content" style="background-color: transparent">						
+ 			</div>
+ 		</div>
+ 		<!-- 弹窗 end -->
+ 	</div>
+ 	<!--查看福袋end-->	
+ 	<!--7.别人帮拆福袋start-->
+ 	<div id="helpXFD" class="hide">
+ 		<!-- 信息框 -->
+ 		<div class="info_frame">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/info_frame.png"/>
+ 			
+ 			<div class="info_text">
+ 				<span class="info_middle" id="chaiTip">
+ 				</span>
+ 				<i></i>
+ 			</div>
+ 		</div>
+ 		
+ 		<!-- 鹿 -->
+ 		<div class="deer">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/deer.png"/>
+ 		</div>
+ 		<!-- 按钮 -->
+ 		<div class="chris_btn">
+ 			<div class="chris_btn">					
+ 				<!-- 拆福袋按钮 -->
+ 				<img id="btnCFD" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/tearopen.png" class="tearopen" style="display: none">
+ 				<!-- 立即通知ta按钮 -->
+ 				<img id="ljTell" flag="1" data-arc="ljTell" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/tellta.png" class="tearopen" data-bagNum="" data-bagID="">
+ 				
+ 				<!-- 我也要领按钮 -->
+ 				<img data-arc="metoo" data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/metoo.png" class="metoo">
+ 			</div>
+ 		</div>
+ 		<!-- 礼物背景 -->
+ 		<div class="giftbg">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/sun.png"/>
+ 		</div>
+ 		<!-- 雪花 -->
+ 		<div class="snow">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/snow.png"/>
+ 		</div>
+ 		<!--三只手-->
+ 		<div class="hands" style="display:none;">
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/hands.png">
+ 			</div>
+ 		<!--闪亮的装饰-->
+ 		<div class="bling" style="transform:scale(0);">
+ 				<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/bling.png">
+ 			</div>
+ 		<!-- 本来logo -->
+ 		<div class="benlailogo">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/logo.png"/>
+ 		</div>
+ 		<!-- 礼物 -->
+ 		<div class="gift" id="chaiGift">
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift1_open.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift2_open.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift3_open.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift4_open.png" style="display: none"/>
+ 			<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/gift5_open.png"/>
+ 		</div>
+ 	</div>
+ 	<!--别人帮拆福袋end-->
+ 	<!--common start-->
+ 	<!-- 粉红色背景 -->
+ 	<img src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/bg.jpg"/>
+ 	<!--分享-->
+ 	<a href="javascript:void(0);" data-arc="shareImg" style="left:0;top:0;z-index: 102;position: fixed;width:100%;height: 100%; display:none;">
+ 		<img data-src="http://image.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/share.png" />
+ 	</a>
+ 	<!--common end-->
+ 	<audio id="myaudio" loop preload src="http://image1.benlailife.com/images/sh/subject/wap2015/20151202christmasgift/Piano.mp3" style="display:none;"></audio>
+ </div>
+ <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+ <script src="http://image.benlailife.com/libs/activity/shengdan.js"></script>
